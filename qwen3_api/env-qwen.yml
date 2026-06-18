@@ -1,0 +1,15 @@
+name: qwen
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - flask
+      - transformers
+      - qwen-vl-utils
+      - accelerate
+      - torch
+      - torchvision
+
