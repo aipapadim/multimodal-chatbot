@@ -69,10 +69,5 @@ bash start_pillar_chatbot.sh
 ## Communication
 All servers communicate via REST API using JSON format. The data transferred include images, segmentation masks (RLE-encoded), and object bounding boxes to determine spatial relationships.
 
-## Future Improvements
-- Integration of the **DeepSeek** model as an alternative backbone.
-- Experimenting with **Diffusion models** for text-to-image generation.
-- Refactoring image transfer using **Base64 encoding** instead of paths.
-
 ## License
 This project is part of the **PILLAR-Robots** initiative and follows the licensing agreements set by the project consortium.
