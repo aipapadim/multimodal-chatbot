@@ -39,8 +39,28 @@ This repository contains the implementation of a multimodal chatbot designed for
 ## Setup
 Each module runs in a separate Conda environment. Ensure you have Conda installed before proceeding.
 
-### Running the app
+### Downloading Pretrained Weights
+Before running the app, create the `pretrained_models` folder inside `Inpaint-Anything` and download the required model weights into it:
 
+```bash
+mkdir -p Inpaint-Anything/pretrained_models/big-lama/models
+```
+
+| File | Destination | Download Link |
+|------|--------------|----------------|
+| sam2.1_hiera_base_plus.pt | `Inpaint-Anything/pretrained_models/sam2.1_hiera_base_plus.pt` | https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_base_plus.pt |
+| sam2.1_hiera_large.pt | `Inpaint-Anything/pretrained_models/sam2.1_hiera_large.pt` | https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt |
+| big-lama best.ckpt | `Inpaint-Anything/pretrained_models/big-lama/best.ckpt` **and** `Inpaint-Anything/pretrained_models/big-lama/models/best.ckpt` | https://drive.google.com/drive/folders/1B2x7eQDgecTL0oh3LSIBDGj0fTxs6Ips |
+
+Quick download for the SAM2 weights:
+```bash
+wget -P Inpaint-Anything/pretrained_models https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_base_plus.pt
+wget -P Inpaint-Anything/pretrained_models https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
+```
+
+For big-lama, the Google Drive link is a folder — download `best.ckpt` manually from there and copy it into **both** destination paths listed above.
+
+### Running the app
 ```sh
 chmod +x start_pillar_chatbot.sh
 bash start_pillar_chatbot.sh
